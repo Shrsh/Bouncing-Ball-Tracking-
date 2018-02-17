@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.8)
+project( hybridkalmanfilter )
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+find_package( OpenCV 3.2.0 EXACT REQUIRED )
+add_executable( hybrid hybrid.cpp )
+target_link_libraries( hybrid ${OpenCV_LIBS} )
+target_link_libraries(hybrid ${BESLER_LIBRARIES})
